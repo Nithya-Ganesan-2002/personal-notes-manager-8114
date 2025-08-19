@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import './App.css';
 import './design.css';
+import brandLogo from './assets/media/accoodo-logo.png';
 
 /**
  * AppHeader component renders the top application bar with brand, search, and actions.
@@ -17,8 +18,14 @@ function AppHeader() {
   return (
     <header className="app-header" role="banner" aria-label="Application Header">
       <div className="brand" aria-label="AcooDo">
-        <span className="brand-mark" aria-hidden="true" />
-        AcooDo
+        <img
+          src={brandLogo}
+          className="brand-logo"
+          alt="AcooDo logo"
+          width="24"
+          height="24"
+        />
+        <span className="brand-text">AcooDo</span>
       </div>
       <div className="header-search">
         <form className="search-box" role="search" onSubmit={onSubmit} aria-label="Global search">

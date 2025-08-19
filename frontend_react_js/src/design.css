@@ -67,13 +67,16 @@ body {
   letter-spacing: 0.2px;
 }
 
-.brand-mark {
+.brand-logo {
   width: 24px;
   height: 24px;
-  border-radius: 6px;
-  background: var(--white);
+  object-fit: contain;
   display: inline-block;
-  opacity: .9;
+  border-radius: 4px; /* slight rounding if logo needs it; keep subtle */
+  background: transparent;
+}
+.brand .brand-text {
+  line-height: 1;
 }
 
 .header-search {
