@@ -1,1 +1,3 @@
-# personal-notes-manager-8114
+# Project Repository
+
+This is the initial README file for the project.
