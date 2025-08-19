@@ -4,10 +4,10 @@ This project provides a minimal React template with a clean, modern UI and minim
 
 ## Features
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+- Lightweight: No heavy UI frameworks - uses only vanilla CSS and React
+- Modern UI: Clean, responsive design with KAVIA brand styling
+- Fast: Minimal dependencies for quick loading times
+- Simple: Easy to understand and modify
 
 ## Getting Started
 
@@ -16,7 +16,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open http://localhost:3000 to view it in your browser.
 
 ### `npm test`
 
@@ -27,56 +27,75 @@ Launches the test runner in interactive watch mode.
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
+## Current Demo Screen (Settings → Notifications)
+
+This app currently renders an initial implementation of the Settings → Notifications screen for the Personal Notes Manager.
+
+This screen is built from design notes in `assets/settings_notifications_design_notes.md` and includes:
+- App shell using CSS Grid: header, primary + secondary sidebars, content
+- Header with brand (AcooDo), global search, and utility icon buttons
+- Primary sidebar (icon-only) and Settings sidebar (section list)
+- Context bar with a "Notifications" tab
+- Main content with a section title and a functional, accessible toggle: "Enable Status Sharing"
+- Responsive adjustments to collapse the secondary sidebar at narrower widths
+
+### Key Files
+
+- `src/design.css` — Design variables and layout
+  - Design tokens (colors, spacing, typography)
+  - App grid layout (header, sidebars, content)
+  - Header, sidebars, context bar, and notification section styles
+  - Accessible custom switch styles
+- `src/App.js` — Page composition and UI components
+  - AppHeader, PrimarySidebar, SettingsSidebar, ContentTabs
+  - PUBLIC_INTERFACE ToggleRow component (accessible switch)
+  - Theme toggle utility retained (bottom-right)
+- `src/App.css` — Existing template styles (theme toggle and base CRA styles)
+- `src/index.css` — Base resets updated to match the design font stack
+
 ## Customization
 
-### Colors
+- Colors and spacings follow tokens in `src/design.css`.
+- Extend Components:
+  - Add more tabs in `ContentTabs`
+  - Add or wire settings links in `SettingsSidebar`
+  - Replace emoji placeholders with SVG icons in `AppHeader` and sidebars
+- Functionality:
+  - Wire global search submit handling
+  - Hook header action buttons to app features
+  - Persist the "Enable Status Sharing" toggle via API/local storage as needed
 
-The main brand colors are defined as CSS variables in `src/App.css`:
+## Roadmap
 
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
-
-### Components
-
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
-
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
+- Integrate actual SVG icon set (20–24px)
+- Add routing to navigate among Settings sections and broader notes UI
+- Implement notes listing and editor panes
+- Connect settings state to backend or local persistence
 
 ## Learn More
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the React documentation: https://reactjs.org/
 
 ### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Docs: https://facebook.github.io/create-react-app/docs/code-splitting
 
 ### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Docs: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
 ### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Docs: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
 ### Advanced Configuration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Docs: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Docs: https://facebook.github.io/create-react-app/docs/deployment
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Docs: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
